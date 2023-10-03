@@ -56,7 +56,7 @@ protocol="-1"
 cidr_blocks= ["0.0.0.0/0"]
 }
 }
-resource "aws_key_pair" "tf-key-pair" {
+resource "aws_key_pair" "tf-key-pair-1" {
 key_name = "tf-key-pair"
 public_key = tls_private_key.rsa.public_key_openssh
 }
@@ -66,5 +66,5 @@ rsa_bits  = 4096
 }
 resource "local_file" "tf-key" {
 content  = tls_private_key.rsa.private_key_pem
-filename = "tf-key-pair"
+filename = "tf-key-pair-1"
 }
