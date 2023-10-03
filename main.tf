@@ -10,10 +10,10 @@ version = "5.19.0"
 provider "aws" {
   access_key="var.accesskey"
   secret_key= "var.secretkey"
-  region     = "us-east-1"
+  region     = "ap-south-1"
 }
 resource "aws_instance" "myec2" {
-  ami           = "ami-03a6eaae9938c858c"
+  ami           = "ami-067c21fb1979f0b27"
   instance_type = "t2.micro"
   vpc_security_group_ids=[aws_security_group.web-sg.id]
   key_name="tf-key-pair"
